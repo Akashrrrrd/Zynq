@@ -5,6 +5,7 @@ import "./Header.css";
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,9 +13,21 @@ const Header = () => {
       setScrolled(offset > 50);
     };
 
+    const checkMobileView = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Initial check
+    checkMobileView();
+
+    // Event listeners
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", checkMobileView);
+
+    // Cleanup
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", checkMobileView);
     };
   }, []);
 
@@ -26,7 +39,7 @@ const Header = () => {
     setMenuOpen(false);
   };
 
-  // Minimalist SVG Icons
+  // Minimalist SVG Icons (same as before)
   const HomeIcon = () => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -98,67 +111,118 @@ const Header = () => {
   );
 
   return (
-    <header className={`hd-header ${scrolled ? "hd-header-scrolled" : ""}`}>
-      <div className="hd-header-container">
-        <div className="hd-logo-section">
-          <img src={header_logo} alt="Zynq Logo" className="hd-logo-image" />
-          <h1 className="hd-logo-title">Zynq</h1>
-        </div>
+    <>
+      {/* Top Header for Desktop */}
+      <header
+        className={`hd-header ${scrolled ? "hd-header-scrolled" : ""} 
+        ${isMobile ? "hd-header-mobile" : "hd-header-desktop"}`}
+      >
+        <div className="hd-header-container">
+          <div className="hd-logo-section">
+            <img src={header_logo} alt="Zynq Logo" className="hd-logo-image" />
+            <h1 className="hd-logo-title">Zynq</h1>
+          </div>
 
-        <nav
-          className={`hd-navigation ${menuOpen ? "hd-navigation-open" : ""}`}
-        >
-          <ul className="hd-nav-list">
-            <li className="hd-nav-item">
-              <a href="#home" onClick={closeMenu} className="hd-nav-link">
-                <span className="hd-nav-icon">
-                  <HomeIcon />
-                </span>
-                <span className="hd-nav-text">Home</span>
-              </a>
-            </li>
-            <li className="hd-nav-item">
-              <a href="#explore" onClick={closeMenu} className="hd-nav-link">
-                <span className="hd-nav-icon">
-                  <ExploreIcon />
-                </span>
-                <span className="hd-nav-text">Explore</span>
-              </a>
-            </li>
-            <li className="hd-nav-item">
-              <a
-                href="#notifications"
-                onClick={closeMenu}
-                className="hd-nav-link"
-              >
-                <span className="hd-nav-icon">
-                  <NotificationIcon />
-                </span>
-                <span className="hd-nav-text">Notifications</span>
-              </a>
-            </li>
-            <li className="hd-nav-item">
-              <a href="#profile" onClick={closeMenu} className="hd-nav-link">
-                <span className="hd-nav-icon">
-                  <ProfileIcon />
-                </span>
-                <span className="hd-nav-text">Profile</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
+          {/* Desktop Navigation */}
+          {!isMobile && (
+            <nav
+              className={`hd-navigation ${
+                menuOpen ? "hd-navigation-open" : ""
+              }`}
+            >
+              <ul className="hd-nav-list">
+                <li className="hd-nav-item">
+                  <a href="#home" onClick={closeMenu} className="hd-nav-link">
+                    <span className="hd-nav-icon">
+                      <HomeIcon />
+                    </span>
+                    <span className="hd-nav-text">Home</span>
+                  </a>
+                </li>
+                <li className="hd-nav-item">
+                  <a
+                    href="#explore"
+                    onClick={closeMenu}
+                    className="hd-nav-link"
+                  >
+                    <span className="hd-nav-icon">
+                      <ExploreIcon />
+                    </span>
+                    <span className="hd-nav-text">Explore</span>
+                  </a>
+                </li>
+                <li className="hd-nav-item">
+                  <a
+                    href="#notifications"
+                    onClick={closeMenu}
+                    className="hd-nav-link"
+                  >
+                    <span className="hd-nav-icon">
+                      <NotificationIcon />
+                    </span>
+                    <span className="hd-nav-text">Notifications</span>
+                  </a>
+                </li>
+                <li className="hd-nav-item">
+                  <a
+                    href="#profile"
+                    onClick={closeMenu}
+                    className="hd-nav-link"
+                  >
+                    <span className="hd-nav-icon">
+                      <ProfileIcon />
+                    </span>
+                    <span className="hd-nav-text">Profile</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          )}
 
-        <div className="hd-mobile-menu" onClick={toggleMenu}>
-          <div
-            className={`hd-hamburger ${menuOpen ? "hd-hamburger-active" : ""}`}
-          >
-            <span className="hd-hamburger-line hd-line-top"></span>
-            <span className="hd-hamburger-line hd-line-middle"></span>
-            <span className="hd-hamburger-line hd-line-bottom"></span>
+          <div className="hd-mobile-menu" onClick={toggleMenu}>
+            <div
+              className={`hd-hamburger ${
+                menuOpen ? "hd-hamburger-active" : ""
+              }`}
+            >
+              <span className="hd-hamburger-line hd-line-top"></span>
+              <span className="hd-hamburger-line hd-line-middle"></span>
+              <span className="hd-hamburger-line hd-line-bottom"></span>
+            </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
+
+      {/* Mobile Footer Navigation */}
+      {isMobile && (
+        <footer className="hd-mobile-footer">
+          <nav className="hd-mobile-nav">
+            <ul className="hd-mobile-nav-list">
+              <li className="hd-mobile-nav-item">
+                <a href="#home" className="hd-mobile-nav-link">
+                  <HomeIcon />
+                </a>
+              </li>
+              <li className="hd-mobile-nav-item">
+                <a href="#explore" className="hd-mobile-nav-link">
+                  <ExploreIcon />
+                </a>
+              </li>
+              <li className="hd-mobile-nav-item">
+                <a href="#notifications" className="hd-mobile-nav-link">
+                  <NotificationIcon />
+                </a>
+              </li>
+              <li className="hd-mobile-nav-item">
+                <a href="#profile" className="hd-mobile-nav-link">
+                  <ProfileIcon />
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </footer>
+      )}
+    </>
   );
 };
 

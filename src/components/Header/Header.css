@@ -141,6 +141,100 @@
   display: none;
 }
 
+/* Mobile Footer Navigation */
+.hd-mobile-footer {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--gradient-primary);
+  z-index: 1000;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hd-mobile-nav {
+  display: flex;
+  justify-content: center;
+}
+
+.hd-mobile-nav-list {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem 1rem;
+}
+
+.hd-mobile-nav-item {
+  flex: 1;
+  text-align: center;
+}
+
+.hd-mobile-nav-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  padding: 0.5rem;
+  transition: color 0.3s var(--transition-smooth);
+}
+
+.hd-mobile-nav-link:hover {
+  color: white;
+}
+
+/* Hamburger Menu Animation */
+.hd-hamburger {
+  position: relative;
+  width: 30px;
+  height: 20px;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+}
+
+.hd-hamburger-line {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: white;
+  border-radius: 2px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+
+.hd-hamburger-line:nth-child(1) {
+  top: 0px;
+}
+
+.hd-hamburger-line:nth-child(2) {
+  top: 10px;
+}
+
+.hd-hamburger-line:nth-child(3) {
+  top: 20px;
+}
+
+.hd-hamburger-active .hd-hamburger-line:nth-child(1) {
+  top: 10px;
+  transform: rotate(135deg);
+}
+
+.hd-hamburger-active .hd-hamburger-line:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+.hd-hamburger-active .hd-hamburger-line:nth-child(3) {
+  top: 10px;
+  transform: rotate(-135deg);
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .hd-header-container {
@@ -153,99 +247,30 @@
 }
 
 @media (max-width: 768px) {
-  .hd-navigation {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
+  .hd-header {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .hd-header-container {
     background: var(--gradient-primary);
-    backdrop-filter: blur(15px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
   }
 
-  .hd-navigation-open {
+  .hd-navigation {
+    display: none;
+  }
+
+  .hd-mobile-footer {
     display: block;
-    animation: slideDown 0.4s ease;
-  }
-
-  @keyframes slideDown {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .hd-nav-list {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .hd-nav-link {
-    font-size: 1.2rem;
-    width: 100%;
-    justify-content: flex-start;
   }
 
   .hd-mobile-menu {
     display: block;
     cursor: pointer;
     z-index: 1100;
-  }
-
-  .hd-hamburger {
-    position: relative;
-    width: 30px;
-    height: 20px;
-    transform: rotate(0deg);
-    transition: 0.5s ease-in-out;
-  }
-
-  .hd-hamburger-line {
-    display: block;
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    background: white;
-    border-radius: 2px;
-    opacity: 1;
-    left: 0;
-    transform: rotate(0deg);
-    transition: 0.25s ease-in-out;
-  }
-
-  .hd-hamburger-line:nth-child(1) {
-    top: 0px;
-  }
-
-  .hd-hamburger-line:nth-child(2) {
-    top: 10px;
-  }
-
-  .hd-hamburger-line:nth-child(3) {
-    top: 20px;
-  }
-
-  .hd-hamburger-active .hd-hamburger-line:nth-child(1) {
-    top: 10px;
-    transform: rotate(135deg);
-  }
-
-  .hd-hamburger-active .hd-hamburger-line:nth-child(2) {
-    opacity: 0;
-    left: -60px;
-  }
-
-  .hd-hamburger-active .hd-hamburger-line:nth-child(3) {
-    top: 10px;
-    transform: rotate(-135deg);
   }
 }
 
@@ -257,4 +282,14 @@
   .hd-logo-title {
     font-size: 1.5rem;
   }
+
+  .hd-mobile-nav-list {
+    padding: 0.5rem 0.5rem;
+  }
+}
+
+/* Content Spacing for Fixed Header */
+body {
+  padding-top: 80px;
+  padding-bottom: 70px;
 }
