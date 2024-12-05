@@ -1,11 +1,54 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Styles */
+.fd-header {
+  background-color: #8c1aff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.fd-header-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.fd-header-menu {
+  display: flex;
+  gap: 1rem;
+}
+
+.fd-header-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+.fd-header-menu a:hover {
+  color: #d9b3ff;
+}
+
 /* Feed Container */
 .fd-feed {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 2rem;
+  padding: 120px 2rem 2rem;
   max-width: 800px;
-  margin: 80px auto 0;
+  margin: 0 auto;
   background-color: #ffffff;
 }
 
@@ -163,7 +206,7 @@
 @media (max-width: 1200px) {
   .fd-feed {
     max-width: 700px;
-    padding: 1.5rem;
+    padding: 120px 1.5rem 1.5rem;
   }
 
   .fd-post-header {
@@ -191,7 +234,7 @@
 @media (max-width: 1024px) {
   .fd-feed {
     max-width: 650px;
-    padding: 1.25rem;
+    padding: 120px 1.25rem 1.25rem;
   }
 
   .fd-post-header {
@@ -227,8 +270,7 @@
 @media (max-width: 768px) {
   .fd-feed {
     max-width: 100%;
-    padding: 1rem;
-    margin-top: 80px;
+    padding: 100px 1rem 1rem;
   }
 
   .fd-post-header {
@@ -263,10 +305,21 @@
 }
 
 @media (max-width: 480px) {
+  .fd-header {
+    padding: 0.75rem 1rem;
+  }
+
+  .fd-header-logo {
+    font-size: 1.2rem;
+  }
+
+  .fd-header-menu a {
+    font-size: 0.9rem;
+  }
+
   .fd-feed {
-    padding: 0.5rem;
-    margin-top: 40px;
-    gap: 2rem;
+    padding: 80px 0.5rem 0.5rem;
+    gap: 1.5rem;
   }
 
   .fd-post {
@@ -312,6 +365,68 @@
   .fd-share-button {
     font-size: 0.85rem;
     padding: 0.3rem 0.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .fd-header {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .fd-header-logo {
+    font-size: 1rem;
+  }
+
+  .fd-header-menu a {
+    font-size: 0.8rem;
+  }
+
+  .fd-feed {
+    padding: 60px 0.25rem 0.25rem;
+    gap: 1.25rem;
+  }
+
+  .fd-post {
+    margin-bottom: 0.75rem;
+  }
+
+  .fd-header-info {
+    gap: 0.5rem;
+  }
+
+  .fd-profile-pic {
+    width: 30px;
+    height: 30px;
+  }
+
+  .fd-username {
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .fd-post-meta {
+    font-size: 0.7rem;
+  }
+
+  .fd-content-text {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+  }
+
+  .fd-post-image {
+    height: 200px;
+  }
+
+  .fd-interaction-buttons {
+    gap: 0.25rem;
+  }
+
+  .fd-like-button,
+  .fd-comment-button,
+  .fd-share-button {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.3rem;
   }
 }
 

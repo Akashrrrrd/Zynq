@@ -1,5 +1,15 @@
 import React, { useState } from "react";
 import "./Feed.css";
+import image_1 from './../../assets/image_1.png';
+import image_2 from './../../assets/image_2.png';
+import image_3 from './../../assets/image_3.png';
+import image_4 from './../../assets/image_4.png';
+import image_5 from './../../assets/image_5.png';
+import image_6 from './../../assets/image_6.png';
+import image_7 from './../../assets/image_7.png';
+import image_8 from './../../assets/image_8.png';
+import image_9 from './../../assets/image_9.png';
+import image_10 from './../../assets/image_10.png';
 
 const Feed = () => {
   // Expanded posts data with more realistic details
@@ -10,7 +20,7 @@ const Feed = () => {
       fullName: "John Doe",
       profilePic: "/assets/profile1.jpg",
       content: "Exploring the beauty of nature! 🌿 #TravelDiaries",
-      postImage: "/assets/post1.jpg",
+      postImage: image_1,
       likes: 120,
       comments: 45,
       timestamp: "2 hours ago",
@@ -24,7 +34,7 @@ const Feed = () => {
       fullName: "Jane Smith",
       profilePic: "/assets/profile2.jpg",
       content: "Just had the best coffee of my life ☕ #CoffeeLover",
-      postImage: "/assets/post2.jpg",
+      postImage: image_2,
       likes: 230,
       comments: 30,
       timestamp: "5 hours ago",
@@ -38,7 +48,7 @@ const Feed = () => {
       fullName: "Alex Wanderer",
       profilePic: "/assets/profile3.jpg",
       content: "Caught this stunning sunset on my hike 🌄 #NatureLover",
-      postImage: "/assets/post3.jpg",
+      postImage: image_3,
       likes: 340,
       comments: 65,
       timestamp: "1 day ago",
@@ -52,7 +62,7 @@ const Feed = () => {
       fullName: "Emily Artsy",
       profilePic: "/assets/profile4.jpg",
       content: "Just finished my latest painting 🎨 #ArtIsLife",
-      postImage: "/assets/post4.jpg",
+      postImage: image_4,
       likes: 410,
       comments: 95,
       timestamp: "4 hours ago",
@@ -66,7 +76,7 @@ const Feed = () => {
       fullName: "Mark Traveler",
       profilePic: "/assets/profile5.jpg",
       content: "Who else loves road trips? 🚗💨 #TravelGoals",
-      postImage: "/assets/post5.jpg",
+      postImage: image_5,
       likes: 150,
       comments: 50,
       timestamp: "6 hours ago",
@@ -80,7 +90,7 @@ const Feed = () => {
       fullName: "Sophie Foodie",
       profilePic: "/assets/profile6.jpg",
       content: "This chocolate cake was a slice of heaven 🍰 #FoodiesUnite",
-      postImage: "/assets/post6.jpg",
+      postImage: image_6,
       likes: 290,
       comments: 72,
       timestamp: "3 hours ago",
@@ -94,7 +104,7 @@ const Feed = () => {
       fullName: "Chris Coder",
       profilePic: "/assets/profile7.jpg",
       content: "Finally launched my new app! 🚀 #TechLife",
-      postImage: "/assets/post7.jpg",
+      postImage: image_7,
       likes: 500,
       comments: 120,
       timestamp: "8 hours ago",
@@ -108,7 +118,7 @@ const Feed = () => {
       fullName: "Linda Fitness",
       profilePic: "/assets/profile8.jpg",
       content: "Morning yoga to start the day 🌅 #HealthGoals",
-      postImage: "/assets/post8.jpg",
+      postImage: image_8,
       likes: 320,
       comments: 88,
       timestamp: "10 hours ago",
@@ -122,7 +132,7 @@ const Feed = () => {
       fullName: "Sam Gamer",
       profilePic: "/assets/profile9.jpg",
       content: "Just hit the top rank in my favorite game 🎮🔥 #GamerLife",
-      postImage: "/assets/post9.jpg",
+      postImage: image_9,
       likes: 780,
       comments: 210,
       timestamp: "1 day ago",
@@ -136,7 +146,7 @@ const Feed = () => {
       fullName: "Mia Books",
       profilePic: "/assets/profile10.jpg",
       content: "This book changed my perspective 📚✨ #Bookworm",
-      postImage: "/assets/post10.jpg",
+      postImage: image_10,
       likes: 340,
       comments: 63,
       timestamp: "2 days ago",
