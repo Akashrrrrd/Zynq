@@ -1,15 +1,25 @@
 import React, { useState } from "react";
 import "./Feed.css";
-import image_1 from './../../assets/image_1.png';
-import image_2 from './../../assets/image_2.png';
-import image_3 from './../../assets/image_3.png';
-import image_4 from './../../assets/image_4.png';
-import image_5 from './../../assets/image_5.png';
-import image_6 from './../../assets/image_6.png';
-import image_7 from './../../assets/image_7.png';
-import image_8 from './../../assets/image_8.png';
-import image_9 from './../../assets/image_9.png';
-import image_10 from './../../assets/image_10.png';
+import image_1 from "./../../assets/image_1.png";
+import image_2 from "./../../assets/image_2.png";
+import image_3 from "./../../assets/image_3.png";
+import image_4 from "./../../assets/image_4.png";
+import image_5 from "./../../assets/image_5.png";
+import image_6 from "./../../assets/image_6.png";
+import image_7 from "./../../assets/image_7.png";
+import image_8 from "./../../assets/image_8.png";
+import image_9 from "./../../assets/image_9.png";
+import image_10 from "./../../assets/image_10.png";
+import profile_1 from "./../../assets/profile_1.png";
+import profile_2 from "./../../assets/profile_2.png";
+import profile_3 from "./../../assets/profile_3.png";
+import profile_4 from "./../../assets/profile_4.png";
+import profile_5 from "./../../assets/profile_5.png";
+import profile_6 from "./../../assets/profile_6.png";
+import profile_7 from "./../../assets/profile_7.png";
+import profile_8 from "./../../assets/profile_8.png";
+import profile_9 from "./../../assets/profile_9.png";
+import profile_10 from "./../../assets/profile_10.png";
 
 const Feed = () => {
   // Expanded posts data with more realistic details
@@ -18,7 +28,7 @@ const Feed = () => {
       id: 1,
       username: "john_doe",
       fullName: "John Doe",
-      profilePic: "/assets/profile1.jpg",
+      profilePic: profile_1,
       content: "Exploring the beauty of nature! 🌿 #TravelDiaries",
       postImage: image_1,
       likes: 120,
@@ -32,7 +42,7 @@ const Feed = () => {
       id: 2,
       username: "jane_smith",
       fullName: "Jane Smith",
-      profilePic: "/assets/profile2.jpg",
+      profilePic: profile_2,
       content: "Just had the best coffee of my life ☕ #CoffeeLover",
       postImage: image_2,
       likes: 230,
@@ -46,7 +56,7 @@ const Feed = () => {
       id: 3,
       username: "alex_wanderer",
       fullName: "Alex Wanderer",
-      profilePic: "/assets/profile3.jpg",
+      profilePic: profile_3,
       content: "Caught this stunning sunset on my hike 🌄 #NatureLover",
       postImage: image_3,
       likes: 340,
@@ -60,7 +70,7 @@ const Feed = () => {
       id: 4,
       username: "emily_artsy",
       fullName: "Emily Artsy",
-      profilePic: "/assets/profile4.jpg",
+      profilePic: profile_4,
       content: "Just finished my latest painting 🎨 #ArtIsLife",
       postImage: image_4,
       likes: 410,
@@ -74,7 +84,7 @@ const Feed = () => {
       id: 5,
       username: "mark_traveler",
       fullName: "Mark Traveler",
-      profilePic: "/assets/profile5.jpg",
+      profilePic: profile_5,
       content: "Who else loves road trips? 🚗💨 #TravelGoals",
       postImage: image_5,
       likes: 150,
@@ -88,7 +98,7 @@ const Feed = () => {
       id: 6,
       username: "sophie_foodie",
       fullName: "Sophie Foodie",
-      profilePic: "/assets/profile6.jpg",
+      profilePic: profile_6,
       content: "This chocolate cake was a slice of heaven 🍰 #FoodiesUnite",
       postImage: image_6,
       likes: 290,
@@ -102,7 +112,7 @@ const Feed = () => {
       id: 7,
       username: "chris_coder",
       fullName: "Chris Coder",
-      profilePic: "/assets/profile7.jpg",
+      profilePic: profile_7,
       content: "Finally launched my new app! 🚀 #TechLife",
       postImage: image_7,
       likes: 500,
@@ -116,7 +126,7 @@ const Feed = () => {
       id: 8,
       username: "linda_fitness",
       fullName: "Linda Fitness",
-      profilePic: "/assets/profile8.jpg",
+      profilePic: profile_8,
       content: "Morning yoga to start the day 🌅 #HealthGoals",
       postImage: image_8,
       likes: 320,
@@ -130,7 +140,7 @@ const Feed = () => {
       id: 9,
       username: "sam_gamer",
       fullName: "Sam Gamer",
-      profilePic: "/assets/profile9.jpg",
+      profilePic: profile_9,
       content: "Just hit the top rank in my favorite game 🎮🔥 #GamerLife",
       postImage: image_9,
       likes: 780,
@@ -144,7 +154,7 @@ const Feed = () => {
       id: 10,
       username: "mia_books",
       fullName: "Mia Books",
-      profilePic: "/assets/profile10.jpg",
+      profilePic: profile_10,
       content: "This book changed my perspective 📚✨ #Bookworm",
       postImage: image_10,
       likes: 340,
