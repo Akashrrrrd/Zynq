@@ -94,7 +94,7 @@ const Explore = () => {
           {trendingTopics.map((topic, index) => (
             <button
               key={index}
-              className="trending-chip"
+              className="trendingz-chip"
               aria-label={`Explore ${topic} topic`}
             >
               #{topic.replace(/\s+/g, "")}

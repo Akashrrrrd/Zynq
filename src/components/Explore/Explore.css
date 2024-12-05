@@ -6,7 +6,7 @@
   --color-white: #ffffff;
   --color-text-dark: #333;
   --color-text-light: #777;
-  --color-accent: #e6f2ff;
+  --colorz-accent: #e6f2ff;
   --color-accent-dark: #c5e1ff;
 
   /* Typography */
@@ -71,11 +71,11 @@
   gap: 1rem;
 }
 
-.trending-chip {
+.trendingz-chip {
   font-size: 1rem;
   color: var(--color-primary);
   font-weight: 500;
-  background: var(--color-accent);
+  background: var(--colorz-accent);
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 20px;
@@ -84,8 +84,8 @@
   outline-offset: 2px;
 }
 
-.trending-chip:hover,
-.trending-chip:focus-visible {
+.trendingz-chip:hover,
+.trendingz-chip:focus-visible {
   background: var(--color-primary);
   color: var(--color-white);
   transform: scale(1.05);
@@ -226,7 +226,7 @@
     font-size: 1.3rem;
   }
 
-  .trending-chip {
+  .trendingz-chip {
     font-size: 0.9rem;
     padding: 0.4rem 0.8rem;
   }

@@ -141,6 +141,21 @@
   display: none;
 }
 
+.hd-mobile-ai-section {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.hd-mobile-ai-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hd-mobile-ai-icon {
+  font-size: 1.5rem;
+}
+
 /* Mobile Footer Navigation */
 .hd-mobile-footer {
   display: none;
@@ -235,17 +250,7 @@
   transform: rotate(-135deg);
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .hd-header-container {
-    padding: 1rem;
-  }
-
-  .hd-nav-list {
-    gap: 1.5rem;
-  }
-}
-
+/* Responsive Design for AI Icon */
 @media (max-width: 768px) {
   .hd-header {
     background: transparent;
@@ -255,8 +260,10 @@
   .hd-header-container {
     background: var(--gradient-primary);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    /* border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
   }
 
   .hd-navigation {
@@ -272,41 +279,44 @@
     cursor: pointer;
     z-index: 1100;
   }
+
+  .hd-mobile-ai-section {
+    display: flex;
+    align-items: center;
+    margin-left: 16rem;
+  }
+
+  .hd-mobile-ai-link {
+    color: white;
+    text-decoration: none;
+  }
+
+  .hd-mobile-ai-icon {
+    font-size: 1.3rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .hd-header-container {
-    padding: 0.75rem;
-    border-radius: none;
+  .hd-mobile-ai-section {
+    margin-left: 0.75rem; /* Adjusted for smaller screens */
   }
 
-  .hd-logo-title {
-    font-size: 1.5rem;
-  }
-
-  .hd-mobile-nav-list {
-    padding: 0.5rem 0.5rem;
+  .hd-mobile-ai-icon {
+    font-size: 1.2rem;
   }
 }
 
+@media (max-width: 360px) {
+  .hd-mobile-ai-section {
+    margin-right: 0.5rem; /* Further adjusted for smallest screens */
+  }
+
+  .hd-mobile-ai-icon {
+    font-size: 1rem;
+  }
+}
 /* Content Spacing for Fixed Header */
 body {
   padding-top: 80px;
   padding-bottom: 70px;
 }
-
-.hd-mobile-ai-section {
-  margin-left: 280px;
-  display: flex;
-  align-items: center;
-}
-
-.hd-mobile-ai-link {
-  color: inherit;
-  text-decoration: none;
-}
-
-.hd-mobile-ai-icon {
-  font-size: 1.5rem;
-}
-

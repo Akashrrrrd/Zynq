@@ -21,28 +21,12 @@
 }
 
 /* Improved Reset and Base Styles */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: var(--font-primary);
-  background-color: var(--background-color);
-  color: var(--text-color-dark);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
 /* Chat Container */
 .ai-container {
-  max-width: 600px;
+  max-width: 800px;
   width: 95%;
-  margin: 2rem auto;
+  margin: 1rem auto;
   background-color: var(--chat-bg);
   border-radius: 16px;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08),
@@ -50,7 +34,7 @@ body {
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.05);
   transition: transform var(--transition-duration) var(--transition-easing),
-    box-shadow var(--transition-duration) var(--transition-easing);
+  box-shadow var(--transition-duration) var(--transition-easing);
 }
 
 .ai-container:hover {
