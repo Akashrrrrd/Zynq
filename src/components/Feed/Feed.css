@@ -1,45 +1,9 @@
-/* Header Styles */
-.fd-header {
-  background-color: #8c1aff;
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #fff;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-}
-
-.fd-header-logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.fd-header-menu {
-  display: flex;
-  gap: 1rem;
-}
-
-.fd-header-menu a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.2s ease;
-}
-
-.fd-header-menu a:hover {
-  color: #d9b3ff;
-}
-
 /* Feed Container */
 .fd-feed {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 120px 2rem 2rem;
+  padding: 20px 2rem 2rem;
   max-width: 800px;
   margin: 0 auto;
   background-color: #ffffff;
@@ -263,7 +227,7 @@
 @media (max-width: 768px) {
   .fd-feed {
     max-width: 100%;
-    padding: 100px 1rem 1rem;
+    padding: 20px 1rem 1rem;
   }
 
   .fd-post-header {
@@ -311,7 +275,7 @@
   }
 
   .fd-feed {
-    padding: 80px 0.5rem 0.5rem;
+    padding: 10px 0.5rem 0.5rem;
     gap: 1.5rem;
   }
 
@@ -363,7 +327,7 @@
 
 @media (max-width: 360px) {
   .fd-header {
-    padding: 0.5rem 0.75rem;
+    padding: 0.5rem;
   }
 
   .fd-header-logo {
@@ -375,7 +339,7 @@
   }
 
   .fd-feed {
-    padding: 60px 0.25rem 0.25rem;
+    padding: 40px 0.25rem 0.25rem;
     gap: 1.25rem;
   }
 
