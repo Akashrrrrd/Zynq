@@ -1,0 +1,257 @@
+:root {
+  /* Enhanced Color Palette */
+  --nf-color-primary: #3b82f6;
+  --nf-color-secondary: #f0f9ff;
+  --nf-color-accent: #10b981;
+  --nf-color-text-dark: #1f2937;
+  --nf-color-text-muted: #6b7280;
+  --nf-color-border: #e5e7eb;
+  --nf-color-background: #f3f4f6;
+  --nf-color-white: #ffffff;
+
+  /* Advanced Transitions & Effects */
+  --nf-transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --nf-shadow-subtle: 0 10px 25px rgba(0, 0, 0, 0.1);
+  --nf-shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.15);
+  --nf-border-radius: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--nf-color-background);
+  color: var(--nf-color-text-dark);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.nf-profile-container {
+  max-width: 900px;
+  margin: 3rem auto;
+  background-color: var(--nf-color-white);
+  border-radius: calc(var(--nf-border-radius) * 1.5);
+  box-shadow: var(--nf-shadow-subtle);
+  overflow: hidden;
+  transition: all var(--nf-transition-smooth);
+  transform: translateY(-10px);
+  will-change: transform, box-shadow;
+}
+
+.nf-profile-container:hover {
+  transform: translateY(-15px);
+  box-shadow: var(--nf-shadow-hover);
+}
+
+.nf-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2.5rem;
+  background: linear-gradient(
+    135deg,
+    var(--nf-color-secondary) 0%,
+    rgba(59, 130, 246, 0.05) 100%
+  );
+  position: relative;
+}
+
+.nf-profile-avatar-container {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  flex-shrink: 0;
+}
+
+.nf-profile-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid var(--nf-color-primary);
+  transition: transform var(--nf-transition-smooth),
+    box-shadow var(--nf-transition-smooth);
+  box-shadow: 0 5px 20px rgba(59, 130, 246, 0.2);
+}
+
+.nf-profile-avatar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+}
+
+.nf-avatar-edit-overlay {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: var(--nf-color-primary);
+  border-radius: 50%;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--nf-transition-smooth);
+}
+
+.nf-avatar-edit-overlay:hover {
+  transform: scale(1.1);
+}
+
+.nf-avatar-file-input {
+  display: none;
+}
+
+.nf-avatar-edit-icon {
+  color: white;
+}
+
+.nf-profile-details {
+  flex-grow: 1;
+}
+
+.nf-profile-name-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nf-profile-name {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.nf-profile-username {
+  color: var(--nf-color-text-light);
+  font-size: 1rem;
+}
+
+.nf-profile-bio {
+  margin: 1rem 0;
+  color: var(--nf-color-text-light);
+}
+
+.nf-profile-additional-info {
+  display: flex;
+  gap: 1rem;
+  color: var(--nf-color-text-light);
+  margin-bottom: 1rem;
+}
+
+.nf-profile-website {
+  color: var(--nf-color-primary);
+  text-decoration: none;
+  transition: color var(--nf-transition-smooth);
+}
+
+.nf-profile-website:hover {
+  text-decoration: underline;
+}
+
+.nf-profile-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.nf-profile-edit-btn,
+.nf-profile-follow-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--nf-transition-smooth);
+}
+
+.nf-profile-edit-btn {
+  background-color: var(--nf-color-primary);
+  color: white;
+}
+
+.nf-profile-follow-btn {
+  background-color: var(--nf-color-secondary);
+  color: var(--nf-color-text-dark);
+}
+
+.nf-profile-stats {
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--nf-color-secondary);
+  padding: 1.5rem;
+}
+
+.nf-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nf-stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--nf-color-primary);
+}
+
+.nf-stat-label {
+  color: var(--nf-color-text-light);
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1080px) {
+  .nf-profile-container {
+    margin: 1.5rem;
+    border-radius: 10px;
+  }
+
+  .nf-profile-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .nf-profile-actions {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .nf-profile-avatar-container {
+    width: 100px;
+    height: 100px;
+  }
+
+  .nf-profile-name {
+    font-size: 1.5rem;
+  }
+
+  .nf-profile-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .nf-profile-container {
+    margin: 1rem;
+  }
+
+  .nf-profile-header {
+    padding: 1rem;
+  }
+
+  .nf-profile-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .nf-profile-edit-btn,
+  .nf-profile-follow-btn {
+    width: 100%;
+  }
+}

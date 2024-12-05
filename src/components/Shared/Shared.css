@@ -1,0 +1,348 @@
+:root {
+  --color-primary: #1877f2;
+  --color-secondary: #f0f2f5;
+  --color-accent: #42b72a;
+  --color-text: #050505;
+  --color-muted: #65676b;
+  --color-white: #ffffff;
+  --color-border: #ccd0d5;
+  --radius: 8px;
+  --shadow-light: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  line-height: 1.4;
+}
+
+.shared-container {
+  max-width: 600px;
+  margin: 1.5rem auto;
+  background: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-medium);
+  overflow: hidden;
+}
+
+.shared-header {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.profile-icon {
+  width: 48px;
+  height: 48px;
+  color: var(--color-muted);
+  margin-right: 1rem;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.username {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.privacy-selector {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--color-muted);
+  font-size: 0.8rem;
+}
+
+.privacy-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 0.25rem;
+}
+
+.privacy-icon-small {
+  width: 12px;
+  height: 12px;
+  margin-right: 0.25rem;
+  color: var(--color-muted);
+}
+
+.shared-box {
+  padding: 1rem;
+}
+
+.shared-input {
+  width: 100%;
+  min-height: 100px;
+  border: none;
+  resize: none;
+  font-size: 1rem;
+  outline: none;
+  margin-bottom: 1rem;
+}
+
+.image-preview-container {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.shared-preview {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+.remove-image-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.shared-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--color-border);
+  padding-top: 1rem;
+}
+
+.action-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.action-icon {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.file-input {
+  display: none;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
+}
+
+.shared-post-btn {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.shared-post-btn:disabled {
+  background-color: var(--color-border);
+  cursor: not-allowed;
+}
+
+.posts-list {
+  padding: 1rem;
+}
+
+.no-posts-message {
+  text-align: center;
+  color: var(--color-muted);
+}
+
+.subtle-hint {
+  font-size: 0.8rem;
+}
+
+.post {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.post-profile-icon {
+  width: 40px;
+  height: 40px;
+  color: var(--color-muted);
+  margin-right: 1rem;
+}
+
+.post-username {
+  font-weight: 600;
+  display: block;
+}
+
+.post-meta {
+  display: flex;
+  align-items: center;
+  color: var(--color-muted);
+  font-size: 0.8rem;
+}
+
+.post-time {
+  margin-right: 0.5rem;
+}
+
+.post-text {
+  margin-bottom: 1rem;
+}
+
+.post-image {
+  width: 100%;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+}
+
+.post-interactions {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--color-border);
+  padding-top: 0.5rem;
+}
+
+.interaction-btn {
+  background: none;
+  border: none;
+  color: var(--color-muted);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .shared-container {
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .shared-header {
+    padding: 0.75rem;
+  }
+
+  .profile-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .shared-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .shared-box {
+    padding: 0.75rem;
+  }
+
+  .shared-input {
+    min-height: 80px;
+    font-size: 0.9rem;
+  }
+
+  .shared-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .action-icons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .shared-post-btn {
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .post-header {
+    margin-bottom: 0.5rem;
+  }
+
+  .post-profile-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 0.5rem;
+  }
+
+  .username,
+  .post-username {
+    font-size: 0.9rem;
+  }
+
+  .post-meta {
+    font-size: 0.7rem;
+  }
+
+  .post-text {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .shared-container {
+    font-size: 14px;
+  }
+
+  .shared-input {
+    min-height: 70px;
+    font-size: 0.85rem;
+  }
+
+  .action-icon {
+    font-size: 0.8rem;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.3rem;
+  }
+
+  .shared-post-btn {
+    font-size: 0.9rem;
+  }
+
+  .post {
+    padding: 0.75rem;
+  }
+
+  .post-profile-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .interaction-btn {
+    font-size: 0.8rem;
+  }
+}
