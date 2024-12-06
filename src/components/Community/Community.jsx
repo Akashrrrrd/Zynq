@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import {
   Users,
   TrendingUp,
@@ -17,6 +18,7 @@ const Community = () => {
   const [filteredCommunities, setFilteredCommunities] = useState([]);
 
   const communityData = [
+    // Collaboration Category
     {
       id: 1,
       name: "Climate Solutions",
@@ -26,17 +28,17 @@ const Community = () => {
     },
     {
       id: 2,
-      name: "Health Tech Pioneers",
-      members: 3210,
-      focus: "Medical Technology",
-      category: "impact",
+      name: "AI for Accessibility",
+      members: 3680,
+      focus: "Technology for Inclusion",
+      category: "collaboration",
     },
     {
       id: 3,
-      name: "Blockchain for Good",
-      members: 2890,
-      focus: "Social Impact",
-      category: "funding",
+      name: "Energy Revolutionists",
+      members: 3780,
+      focus: "Renewable Energy Solutions",
+      category: "collaboration",
     },
     {
       id: 4,
@@ -45,19 +47,21 @@ const Community = () => {
       focus: "Educational Technology",
       category: "collaboration",
     },
+
+    // Impact Category
     {
       id: 5,
-      name: "Clean Water Alliance",
-      members: 2750,
-      focus: "Access to Clean Water",
+      name: "Health Tech Pioneers",
+      members: 3210,
+      focus: "Medical Technology",
       category: "impact",
     },
     {
       id: 6,
-      name: "AI for Accessibility",
-      members: 3680,
-      focus: "Technology for Inclusion",
-      category: "collaboration",
+      name: "Clean Water Alliance",
+      members: 2750,
+      focus: "Access to Clean Water",
+      category: "impact",
     },
     {
       id: 7,
@@ -68,24 +72,70 @@ const Community = () => {
     },
     {
       id: 8,
+      name: "Mental Wellness Advocates",
+      members: 3120,
+      focus: "Psychological Support",
+      category: "impact",
+    },
+
+    // Funding Category
+    {
+      id: 9,
+      name: "Blockchain for Good",
+      members: 2890,
+      focus: "Social Impact",
+      category: "funding",
+    },
+    {
+      id: 10,
       name: "Circular Economy Group",
       members: 2400,
       focus: "Sustainable Business Models",
       category: "funding",
     },
     {
-      id: 9,
-      name: "Energy Revolutionists",
-      members: 3780,
-      focus: "Renewable Energy Solutions",
-      category: "collaboration",
+      id: 11,
+      name: "GreenTech Investors",
+      members: 2140,
+      focus: "Investing in Green Technologies",
+      category: "funding",
     },
     {
-      id: 10,
-      name: "Mental Wellness Advocates",
-      members: 3120,
-      focus: "Psychological Support",
-      category: "impact",
+      id: 12,
+      name: "Carbon Offset Initiative",
+      members: 1780,
+      focus: "Carbon Footprint Reduction",
+      category: "funding",
+    },
+
+    // Innovation Category (New)
+    {
+      id: 13,
+      name: "AI for Healthcare",
+      members: 4000,
+      focus: "Artificial Intelligence in Medicine",
+      category: "innovation",
+    },
+    {
+      id: 14,
+      name: "Smart Cities Pioneers",
+      members: 3500,
+      focus: "Urban Development and Smart Solutions",
+      category: "innovation",
+    },
+    {
+      id: 15,
+      name: "Quantum Computing for Good",
+      members: 2800,
+      focus: "Harnessing Quantum Technology for Social Impact",
+      category: "innovation",
+    },
+    {
+      id: 16,
+      name: "Clean Energy Innovators",
+      members: 3100,
+      focus: "Next-Gen Energy Solutions",
+      category: "innovation",
     },
   ];
 
@@ -167,9 +217,9 @@ const Community = () => {
                 <span>
                   <Users size={16} /> {community.members} Members
                 </span>
-                <button className="join-btn">
-                  <Check size={16} /> Join Community
-                </button>
+                <Link to={`/community/${community.id}`} className="join-btn">
+                  <Check size={20} /> Join
+                </Link>
               </div>
             </div>
           </div>
