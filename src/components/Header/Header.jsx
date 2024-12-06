@@ -8,6 +8,7 @@ import {
   FaUser,
   FaShareAlt,
   FaRobot,
+  FaGlobeAmericas, // Added community icon
 } from "react-icons/fa";
 import "./Header.css";
 
@@ -129,6 +130,17 @@ const Header = () => {
                 </li>
                 <li className="hd-nav-item">
                   <NavLink
+                    to="/community"
+                    onClick={closeMenu}
+                    className={({ isActive }) =>
+                      isActive ? "hd-nav-link active" : "hd-nav-link"
+                    }
+                  >
+                    Community
+                  </NavLink>
+                </li>
+                <li className="hd-nav-item">
+                  <NavLink
                     to="/ai"
                     onClick={closeMenu}
                     className={({ isActive }) =>
@@ -181,6 +193,11 @@ const Header = () => {
               <li className="hd-mobile-nav-item">
                 <NavLink to="/profile" className="hd-mobile-nav-link">
                   <FaUser className="hd-mobile-nav-icon" />
+                </NavLink>
+              </li>
+              <li className="hd-mobile-nav-item">
+                <NavLink to="/community" className="hd-mobile-nav-link">
+                  <FaGlobeAmericas className="hd-mobile-nav-icon" />
                 </NavLink>
               </li>
             </ul>

@@ -7,6 +7,8 @@ import Notifications from "./components/Notifications/Notifications";
 import Profile from "./components/Profile/Profile";
 import Shared from "./components/Shared/Shared";
 import AI from "./components/AI/AI";
+import Diary from "./components/Diary/Diary";
+import Community from "./components/Community/Community";
 
 const App = () => {
   return (
@@ -19,6 +21,8 @@ const App = () => {
         <Route path="/profile" element={<Profile/>} />
         <Route path="/shared" element={<Shared/>}/>
         <Route path="/ai" element={<AI/>}/>
+        <Route path="/diary" element={<Diary/>}/>
+        <Route path="/community" element={<Community/>}/>
       </Routes>
     </Router>
   );
