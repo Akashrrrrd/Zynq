@@ -1,28 +1,51 @@
-/* Professional Header Styles with Enhanced User Experience */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 :root {
-  /* Advanced Color Palette */
-  --color-primary-start: #3498db;
-  --color-primary-end: #8e44ad;
-  --color-background: #f4f6f9;
-  --color-text-primary: #2c3e50;
-  --color-text-secondary: #34495e;
-  --color-accent: #2ecc71;
-  --color-hover: #2980b9;
-  --color-border: rgba(44, 62, 80, 0.1);
+  /* Vibrant Color Palette for Social Media */
+  --color-primary-start: #3b82f6; /* Deeper, more saturated blue */
+  --color-primary-end: #8b5cf6; /* Rich, vibrant purple */
+  --color-background: #f8fafc; /* Slightly brighter background */
+  --color-text-primary: #1f2937; /* Deep charcoal for strong readability */
+  --color-text-secondary: #4b5563; /* Slightly lighter secondary text */
+  --color-accent: #10b981; /* Vibrant emerald green */
+  --color-hover: #2563eb; /* Intense blue for hover states */
+  --color-border: rgba(31, 41, 55, 0.15); /* Slightly more pronounced border */
+  --color-highlight: #f43f5e; /* Bright coral for alerts/notifications */
+  --color-background-secondary: #e5e7eb; /* Subtle gray for secondary elements */
 
-  /* Professional Gradient and Transition */
+  /* Dynamic Gradient with More Energy */
   --gradient-primary: linear-gradient(
     135deg,
     var(--color-primary-start),
     var(--color-primary-end)
   );
+  --gradient-secondary: linear-gradient(
+    to right,
+    var(--color-primary-start),
+    var(--color-highlight)
+  );
 
-  /* Typography and Spacing */
+  /* Enhanced Typography and Spacing */
   --font-family-primary: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  /* Refined Transition for Smooth Interactions */
   --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-quick: all 0.2s ease-in-out;
+}
+
+/* Optional: Additional Color Classes for Flexibility */
+.bg-primary-gradient {
+  background: var(--gradient-primary);
+  color: white;
+}
+
+.text-highlight {
+  color: var(--color-highlight);
+}
+
+.border-accent {
+  border-color: var(--color-accent);
 }
 
 .hd-header {
@@ -38,7 +61,6 @@
   border-bottom: 0px solid var(--color-border);
   transition: all 0.4s var(--transition-smooth);
 }
-
 .hd-header-container {
   display: flex;
   align-items: center;
