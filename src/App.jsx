@@ -10,21 +10,20 @@ import AI from "./components/AI/AI";
 import Diary from "./components/Diary/Diary";
 import Community from "./components/Community/Community";
 import JoinCom from "./pages/JoinCom/JoinCom";
-import comm_1 from './assets/comm_1.png';
-import comm_2 from './assets/comm_2.png';
-import comm_3 from './assets/comm_3.png';
-import comm_4 from './assets/comm_4.png';
-import comm_5 from './assets/comm_5.png';
-import comm_6 from './assets/comm_6.png';
-import comm_7 from './assets/comm_7.png';
-import comm_8 from './assets/comm_8.png';
-import comm_9 from './assets/comm_9.png';
-import comm_10 from './assets/comm_10.png';
-import comm_11 from './assets/comm_11.png';
-import comm_12 from './assets/comm_12.png';
-import comm_13 from './assets/comm_13.png';
+import comm_1 from "./assets/comm_1.png";
+import comm_2 from "./assets/comm_2.png";
+import comm_3 from "./assets/comm_3.png";
+import comm_4 from "./assets/comm_4.png";
+import comm_5 from "./assets/comm_5.png";
+import comm_6 from "./assets/comm_6.png";
+import comm_7 from "./assets/comm_7.png";
+import comm_8 from "./assets/comm_8.png";
+import comm_9 from "./assets/comm_9.png";
+import comm_10 from "./assets/comm_10.png";
+import comm_11 from "./assets/comm_11.png";
+import comm_12 from "./assets/comm_12.png";
+import comm_13 from "./assets/comm_13.png";
 import ComRoom from "./pages/ComRoom/ComRoom";
-
 
 const App = () => {
   const communityData = [
@@ -304,7 +303,7 @@ const App = () => {
             path="/community/:communityId"
             element={<JoinCom communityData={communityData} />}
           />
-          <Route path="/comroom" element={<ComRoom/>}/>
+          <Route path="/comroom" element={<ComRoom />} />
         </Routes>
       </main>
     </Router>

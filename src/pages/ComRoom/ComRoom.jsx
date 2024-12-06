@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Send, Users, MessageCircle } from 'lucide-react';
-import io from 'socket.io-client';
+import React, { useState, useEffect, useRef } from "react";
+import { Send, Users, MessageCircle } from "lucide-react";
+import io from "socket.io-client";
+import "./ComRoom.css";
 
 // Import community data
 const communityData = [
@@ -8,15 +9,15 @@ const communityData = [
     id: 1,
     name: "Climate Solutions",
     members: 5420,
-    category: "collaboration"
+    category: "collaboration",
   },
   // ... other communities from the provided data
 ];
 
 const ComRoom = ({ selectedCommunity = communityData[0] }) => {
   const [messages, setMessages] = useState([]);
-  const [input, setInput] = useState('');
-  const [username, setUsername] = useState('');
+  const [input, setInput] = useState("");
+  const [username, setUsername] = useState("");
   const [isConnected, setIsConnected] = useState(false);
   const messagesEndRef = useRef(null);
 
@@ -24,15 +25,15 @@ const ComRoom = ({ selectedCommunity = communityData[0] }) => {
 
   useEffect(() => {
     // Initialize socket connection
-    socket.current = io('http://localhost:4000', {
-      query: { community: selectedCommunity.id }
+    socket.current = io("http://localhost:4000", {
+      query: { community: selectedCommunity.id },
     });
 
-    socket.current.on('connect', () => {
-      console.log('Connected to chat server');
+    socket.current.on("connect", () => {
+      console.log("Connected to chat server");
     });
 
-    socket.current.on('newMessage', (message) => {
+    socket.current.on("newMessage", (message) => {
       setMessages((prevMessages) => [...prevMessages, message]);
     });
 
@@ -53,11 +54,11 @@ const ComRoom = ({ selectedCommunity = communityData[0] }) => {
         text: input,
         sender: username,
         timestamp: new Date().toISOString(),
-        communityId: selectedCommunity.id
+        communityId: selectedCommunity.id,
       };
-      
-      socket.current.emit('sendMessage', message);
-      setInput('');
+
+      socket.current.emit("sendMessage", message);
+      setInput("");
     }
   };
 
@@ -72,8 +73,8 @@ const ComRoom = ({ selectedCommunity = communityData[0] }) => {
         onChange={(e) => setUsername(e.target.value)}
         maxLength={20}
       />
-      <button 
-        onClick={() => username.trim() && setIsConnected(true)} 
+      <button
+        onClick={() => username.trim() && setIsConnected(true)}
         className="cr-submit-button"
         disabled={!username.trim()}
       >
@@ -90,7 +91,7 @@ const ComRoom = ({ selectedCommunity = communityData[0] }) => {
           <Users size={16} /> {selectedCommunity.members} Members
         </div>
       </div>
-      
+
       <div className="cr-messages">
         {messages.length === 0 && (
           <div className="cr-no-messages">
@@ -99,14 +100,19 @@ const ComRoom = ({ selectedCommunity = communityData[0] }) => {
           </div>
         )}
         {messages.map((message) => (
-          <div 
-            key={message.id} 
-            className={`cr-message ${message.sender === username ? 'cr-message-self' : ''}`}
+          <div
+            key={message.id}
+            className={`cr-message ${
+              message.sender === username ? "cr-message-self" : ""
+            }`}
           >
             <div className="cr-message-header">
               <span className="cr-message-sender">{message.sender}</span>
               <span className="cr-message-timestamp">
-                {new Date(message.timestamp).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
+                {new Date(message.timestamp).toLocaleTimeString([], {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                })}
               </span>
             </div>
             <p className="cr-message-text">{message.text}</p>
@@ -114,7 +120,7 @@ const ComRoom = ({ selectedCommunity = communityData[0] }) => {
         ))}
         <div ref={messagesEndRef} />
       </div>
-      
+
       <div className="cr-input-container">
         <input
           type="text"
@@ -122,11 +128,11 @@ const ComRoom = ({ selectedCommunity = communityData[0] }) => {
           placeholder={`Message ${selectedCommunity.name}`}
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
+          onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
           maxLength={500}
         />
-        <button 
-          onClick={handleSendMessage} 
+        <button
+          onClick={handleSendMessage}
           className="cr-send-button"
           disabled={!input.trim()}
         >
