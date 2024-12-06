@@ -95,6 +95,7 @@
 .jc-btn-primary {
   background-color: #007bff;
   color: white;
+  text-decoration: none;
 }
 
 .jc-btn-primary:hover {

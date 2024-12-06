@@ -60,17 +60,19 @@
   backdrop-filter: blur(10px);
   border-bottom: 0px solid var(--color-border);
   transition: all 0.4s var(--transition-smooth);
+  height: 60px; /* Matches original footer height */
 }
+
 .hd-header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem; /* Reduced padding to fit 50px height */
   position: relative;
+  height: 100%;
 }
-
 .hd-logo-section {
   display: flex;
   align-items: center;
@@ -84,8 +86,8 @@
 }
 
 .hd-logo-image {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -99,7 +101,7 @@
 }
 
 .hd-logo-title {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-weight: 700;
   letter-spacing: -1px;
   background: linear-gradient(45deg, white, rgba(255, 255, 255, 0.7));
@@ -341,6 +343,6 @@
 }
 /* Content Spacing for Fixed Header */
 body {
-  padding-top: 80px;
-  padding-bottom: 70px;
+  padding-top: 60px;
+  padding-bottom: 50px;
 }

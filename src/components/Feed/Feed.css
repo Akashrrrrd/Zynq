@@ -6,13 +6,13 @@
   padding: 40px 2rem 2rem;
   max-width: 800px;
   margin: 12px auto;
-  background-color: #ffffff;
+  background-color: #f0e6d6;
   border-radius: 25px;
 }
 
 /* Individual Post */
 .fd-post {
-  background-color: #ffffff;
+  background-color: #f5f5f5;
   border-radius: 16px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
   overflow: hidden;

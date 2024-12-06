@@ -23,6 +23,7 @@ import comm_10 from './assets/comm_10.png';
 import comm_11 from './assets/comm_11.png';
 import comm_12 from './assets/comm_12.png';
 import comm_13 from './assets/comm_13.png';
+import ComRoom from "./pages/ComRoom/ComRoom";
 
 
 const App = () => {
@@ -303,6 +304,7 @@ const App = () => {
             path="/community/:communityId"
             element={<JoinCom communityData={communityData} />}
           />
+          <Route path="/comroom" element={<ComRoom/>}/>
         </Routes>
       </main>
     </Router>

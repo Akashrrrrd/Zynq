@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import {
   Users,
   Tag,
@@ -10,6 +10,7 @@ import {
   Instagram,
   Linkedin,
 } from "lucide-react";
+import { Plus } from "react-feather";
 import "./JoinCom.css";
 
 const JoinCom = ({ communityData }) => {
@@ -154,9 +155,9 @@ const JoinCom = ({ communityData }) => {
       </div>
 
       <div className="jc-actions">
-        <button onClick={() => navigate(-1)} className="jc-btn jc-btn-primary">
-          <ArrowLeft size={20} /> Back to Communities
-        </button>
+        <Link to="/comroom" className="jc-btn jc-btn-primary">
+          <Plus size={20} /> Join
+        </Link>
       </div>
     </div>
   );

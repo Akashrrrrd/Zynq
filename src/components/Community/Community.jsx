@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link } from "react-router-dom";
 import {
   Users,
   TrendingUp,
@@ -9,6 +9,7 @@ import {
   Filter,
   Globe,
 } from "lucide-react";
+import { FaEye } from "react-icons/fa";
 import "./Community.css";
 
 const Community = () => {
@@ -218,7 +219,7 @@ const Community = () => {
                   <Users size={16} /> {community.members} Members
                 </span>
                 <Link to={`/community/${community.id}`} className="join-btn">
-                  <Check size={20} /> Join
+                  <FaEye size={20} /> View
                 </Link>
               </div>
             </div>

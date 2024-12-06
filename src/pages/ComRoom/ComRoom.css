@@ -1,0 +1,238 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+body {
+  background-color: #f9fafb;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  line-height: 1.6;
+  color: #111827;
+}
+
+.cr-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  min-height: 700px;
+}
+
+.cr-username-container {
+  padding: 2.5rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #f9fafb, #f3f4f6);
+}
+
+.cr-username-title {
+  color: #3b82f6;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.cr-username-input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 1rem;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.cr-username-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2), 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.cr-submit-button {
+  margin-top: 1.25rem;
+  padding: 0.875rem 1.5rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.cr-submit-button:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+}
+
+.cr-submit-button:disabled {
+  background-color: #6b7280;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.cr-chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background-color: #f3f4f6;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.cr-community-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #4b5563;
+  font-weight: 500;
+}
+
+.cr-messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+  background-color: white;
+  scrollbar-width: thin;
+  scrollbar-color: #e5e7eb transparent;
+}
+
+.cr-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cr-messages::-webkit-scrollbar-thumb {
+  background-color: #e5e7eb;
+  border-radius: 3px;
+}
+
+.cr-no-messages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #4b5563;
+  opacity: 0.7;
+  text-align: center;
+}
+
+.cr-message {
+  background-color: #f3f4f6;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  max-width: 80%;
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cr-message-self {
+  align-self: flex-end;
+  background-color: #3b82f6;
+  color: white;
+  margin-left: auto;
+}
+
+.cr-message-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  align-items: center;
+}
+
+.cr-message-sender {
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.cr-message-timestamp {
+  font-size: 0.75rem;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.cr-input-container {
+  display: flex;
+  padding: 1rem 1.5rem;
+  background-color: #f3f4f6;
+  border-top: 1px solid #e5e7eb;
+}
+
+.cr-message-input {
+  flex-grow: 1;
+  padding: 0.875rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px 0 0 12px;
+  font-size: 1rem;
+  background-color: white;
+}
+
+.cr-send-button {
+  padding: 0.875rem 1.25rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 0 12px 12px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cr-send-button:hover {
+  background-color: #2563eb;
+}
+
+.cr-send-button:disabled {
+  background-color: #6b7280;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .cr-container {
+    width: 100%;
+    margin: 0;
+    height: 100vh;
+    border-radius: 0;
+    max-width: none;
+  }
+
+  .cr-messages {
+    height: calc(100vh - 250px);
+  }
+}
+
+@media (max-width: 375px) {
+  .cr-messages {
+    height: calc(100vh - 220px);
+    padding: 1rem;
+  }
+
+  .cr-username-container,
+  .cr-chat-header,
+  .cr-input-container {
+    padding: 1rem;
+  }
+}
