@@ -25,11 +25,6 @@
   --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-body, html {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 .hd-header {
   position: fixed;
   top: 0;
@@ -255,11 +250,11 @@ body, html {
   transform: rotate(-135deg);
 }
 
+/* Responsive Design for AI Icon */
 @media (max-width: 768px) {
   .hd-header {
     background: transparent;
     box-shadow: none;
-    position: relative;
   }
 
   .hd-header-container {
@@ -269,7 +264,6 @@ body, html {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    position: relative;
   }
 
   .hd-navigation {
@@ -289,10 +283,7 @@ body, html {
   .hd-mobile-ai-section {
     display: flex;
     align-items: center;
-    position: absolute;
-    right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
+    margin-left: 16rem;
   }
 
   .hd-mobile-ai-link {
@@ -301,37 +292,34 @@ body, html {
   }
 
   .hd-mobile-ai-icon {
-    font-size: 1.4rem;
-    color: #fff;
+    font-size: 1.3rem;
   }
 }
 
 @media (max-width: 480px) {
   .hd-mobile-ai-section {
-    right: 0.5rem;
-    top: 50%;
-    transform: translateY(-50%);
+    margin-left: 0.75rem; /* Adjusted for smaller screens */
   }
 
   .hd-mobile-ai-icon {
     font-size: 1.2rem;
+    margin-left: 4rem;
+    margin-right: 1.5rem;
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 360px) {
   .hd-mobile-ai-section {
-    right: 0.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-right: 0.5rem; /* Further adjusted for smallest screens */
   }
 
   .hd-mobile-ai-icon {
-    font-size: 1.2rem;
-    color: #fff;
+    font-size: 1rem;
+
   }
 }
-
-
+/* Content Spacing for Fixed Header */
+body {
+  padding-top: 80px;
+  padding-bottom: 70px;
+}
