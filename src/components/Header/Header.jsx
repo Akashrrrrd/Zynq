@@ -56,14 +56,14 @@ const Header = () => {
           <div className="hd-logo-section">
             <img src={header_logo} alt="Zynq Logo" className="hd-logo-image" />
             <h1 className="hd-logo-title">Zynq</h1>
-            {isMobile && (
-              <div className="hd-mobile-ai-section">
-                <NavLink to="/ai" className="hd-mobile-ai-link">
-                  <FaRobot className="hd-mobile-ai-icon" />
-                </NavLink>
-              </div>
-            )}
           </div>
+          {isMobile && (
+            <div className="hd-mobile-ai-section">
+              <NavLink to="/ai" className="hd-mobile-ai-link">
+                <FaRobot className="hd-mobile-ai-icon" />
+              </NavLink>
+            </div>
+          )}
 
           {!isMobile && (
             <nav
@@ -144,9 +144,11 @@ const Header = () => {
 
           {!isMobile && (
             <div className="hd-ai-section">
-              <NavLink to="/ai" className="hd-ai-link" onClick={closeMenu}>
-                
-              </NavLink>
+              <NavLink
+                to="/ai"
+                className="hd-ai-link"
+                onClick={closeMenu}
+              ></NavLink>
             </div>
           )}
         </div>
