@@ -25,6 +25,11 @@
   --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .hd-header {
   position: fixed;
   top: 0;
@@ -329,7 +334,4 @@
   }
 }
 
-body {
-  padding-top: 80px;
-  padding-bottom: 70px;
-}
+

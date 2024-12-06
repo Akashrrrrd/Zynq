@@ -5,7 +5,10 @@
   gap: 2rem;
   padding: 20px 2rem 2rem;
   max-width: 800px;
-  margin: 0 auto;
+  margin-top: 88px;
+  border-radius: 25px;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #ffffff;
 }
 
@@ -227,7 +230,7 @@
 @media (max-width: 768px) {
   .fd-feed {
     max-width: 100%;
-    padding: 20px 1rem 1rem;
+    padding: 10px 1rem 1rem;
   }
 
   .fd-post-header {
@@ -275,7 +278,7 @@
   }
 
   .fd-feed {
-    padding: 10px 0.5rem 0.5rem;
+    padding: 0px 0.5rem 0.5rem;
     gap: 1.5rem;
   }
 
